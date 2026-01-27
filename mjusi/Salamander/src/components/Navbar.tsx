@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
-import L1 from '../../public/salamander-logo-black-alt.svg';
 import { Link } from 'react-router-dom';
 import Menu from "../data/Menu";
-import Button from "./Button";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -16,35 +14,45 @@ const NavBar = () => {
   }, []);
 
   return (
-    <section
-      className={`fixed shadow-2xl flex justify-between items-center px-8 top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-md py-4 text-gray-700' : 'bg-black backdrop-blur-md text-white py-4'
-      }`}
-    >
-      {/* Logo */}
-      <div>
-        <Link to="/">
-          <img src={L1} alt="Salamander Tech Hub Logo" className="h-15" />
-        </Link>
-      </div>
-
-      {/* Menu Items */}
-      <ul className="flex space-x-8 font-extralight">
-        {Menu.map((item, index) => (
-          <li key={index} className="flex">
-            <Link
-              to={item.path}
-              className="hover:text-[#FFED00] transition-colors duration-200"
-            >
-              {item.name}
+    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      scrolled 
+        ? 'bg-gray-900/95 backdrop-blur-md border-b border-white/10' 
+        : 'bg-black/80 backdrop-blur-md border-b border-white/10'
+    }`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          {/* Logo */}
+          <div className="flex-shrink-0 flex items-center gap-3">
+            <Link to="/" className="text-white text-xl tracking-tight hover:text-yellow-300 transition-colors">
+              <span className="font-bold">Salamander</span> Tech Hub
             </Link>
-          </li>
-        ))}
-      </ul>
+          </div>
 
-      {/* Inquire Button */}
-      <Button variant={scrolled ? 'primary' : 'secondary'}>Inquire</Button>
-    </section>
+          {/* Navigation Menu */}
+          <nav aria-label="Main Navigation" className="hidden md:flex space-x-8">
+            {Menu.map((item, index) => (
+              <Link
+                key={index}
+                to={item.path}
+                className="text-sm font-medium text-gray-300 hover:text-yellow-300 transition-colors duration-200"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Inquire Button */}
+          <div className="flex items-center">
+            <Link 
+              to="/contact"
+              className="bg-yellow-300 text-black px-6 py-2.5 rounded-sm font-bold text-sm hover:bg-white transition-colors duration-300 uppercase tracking-wide"
+            >
+              Inquire
+            </Link>
+          </div>
+        </div>
+      </div>
+    </header>
   );
 };
 

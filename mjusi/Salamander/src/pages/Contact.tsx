@@ -163,7 +163,7 @@ const ContactSection: React.FC = () => {
             <div className="text-center h-full flex flex-col justify-center mx-auto">
               <h3 className="text-2xl font-bold mb-8 text-gray-900">Follow us on</h3>
                <div className='items-center justify-center mx-auto'>
-                    <img src={Bg} alt="" srcset="" className='h-70'/>
+                    <img src={Bg} alt="Social Media" className='h-70'/>
                 </div>
 
                 
