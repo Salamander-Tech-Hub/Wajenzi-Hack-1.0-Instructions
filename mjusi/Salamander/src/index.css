@@ -14,4 +14,8 @@
     .text-glow {
         text-shadow: 0 0 20px rgba(253, 224, 71, 0.3);
     }
+    .theme-card:hover {
+        border-color: rgba(253, 224, 71, 0.4);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.3), 0 0 30px rgba(253, 224, 71, 0.12);
+    }
 }

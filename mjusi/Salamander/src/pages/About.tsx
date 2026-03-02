@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from '../components/Navbar';
 import { SocialIcon } from 'react-social-icons';
+import ThemeCard from '../components/ThemeCard';
 
 // Types
 interface TeamMember {
@@ -15,7 +16,7 @@ interface TeamMember {
 const AboutPage: React.FC = () => {
   const founders = [
     {
-      name: "Marcus Thorne",
+      name: "Andrew Kim",
       role: "Co-Founder & CTO",
       bio: "Former lead engineer at global tech giants, Marcus envisioned Salamander as the bridge between corporate excellence and open-source freedom.",
       avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuBzkySrK5sNPxNyBrJTZv3MrMsoqRNgwgmKESDKu1BYMCIF4wRYVvwO5ILz1YigxwYKHGjHXDHVTwMrY4QRUYfPuqJ8DSSLlXYuvi76sbPKuQu5jtrrgMNP-cPmOVf4yI8kzJN3HrLV2L2IcpfqOkIKv5-yw99I6ZuNOoUrOrn0JMumXSLT9A7Tcs5i2ovEHkK7Hmez3nfhQtysbTQ9ghN2rSKZVLyCM-XfIALYA_K-hS3IWIPIBad25bVYBQ68oZ3-T71EexgBp2M",
@@ -26,9 +27,9 @@ const AboutPage: React.FC = () => {
       ]
     },
     {
-      name: "Elena Vance",
+      name: "Martha Sharon",
       role: "Co-Founder & CEO",
-      bio: "With a background in community building and venture capital, Elena drives the strategic growth and cultural integrity of the Salamander hub.",
+      bio: "With a background in community building and venture capital, Martha drives the strategic growth and cultural integrity of the Salamander hub.",
       avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuAJZQT8FLpt_BU5ScoBAqaRrSTaNXPxyFBlrlyjOlykWcPhegQwx-WlxeaV5Fs4hpON1-doqlWHyS7ucEyAHAOAuBFp4u98w9y9mRLXGnlXfUZJCMorReAuvsD31MryLzeG93yz_ChzzMGuHZEIIdajgQf5w6zCRPmLQc4_cqQaB-1HyRvXmka8RDknnKGx9U9X2YyG9cGrWbTdzsChwKDeDsC24lhD0r6BJcbqfAgl4Z46uiTzNYVhnfhBIbZTewy6vcT5QgibBBw",
       socials: [
         { url: "https://linkedin.com", label: "LinkedIn" },
@@ -212,26 +213,28 @@ const AboutPage: React.FC = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {coreTeam.map((member, index) => (
-                <div key={index} className="p-8 bg-background-dark border border-slate-800 rounded-2xl hover:border-primary/50 transition-colors group relative">
-                  <div className="w-20 h-20 rounded-full overflow-hidden mb-6 grayscale group-hover:grayscale-0 transition-all">
-                    <img alt={member.name} className="w-full h-full object-cover" src={member.avatar} />
+                <ThemeCard key={index}>
+                  <div className="p-8 bg-background-dark/50 group relative h-full">
+                    <div className="w-20 h-20 rounded-full overflow-hidden mb-6 grayscale group-hover:grayscale-0 transition-all">
+                      <img alt={member.name} className="w-full h-full object-cover" src={member.avatar} />
+                    </div>
+                    <h4 className="text-xl font-bold text-white">{member.name}</h4>
+                    <p className="text-primary font-mono text-xs uppercase tracking-wider mb-4">{member.role}</p>
+                    <p className="text-sm text-slate-400 leading-relaxed mb-6">{member.bio}</p>
+                    <div className="flex gap-3 justify-start opacity-70 group-hover:opacity-100 transition-opacity">
+                      {member.socials.map((social, idx) => (
+                        <SocialIcon
+                          key={idx}
+                          url={social.url}
+                          fgColor="#fff"
+                          bgColor="transparent"
+                          style={{ height: 30, width: 30, border: '1px solid #334155', borderRadius: '50%' }}
+                          className="hover:border-primary transition-colors"
+                        />
+                      ))}
+                    </div>
                   </div>
-                  <h4 className="text-xl font-bold text-white">{member.name}</h4>
-                  <p className="text-primary font-mono text-xs uppercase tracking-wider mb-4">{member.role}</p>
-                  <p className="text-sm text-slate-400 leading-relaxed mb-6">{member.bio}</p>
-                  <div className="flex gap-3 justify-start opacity-70 group-hover:opacity-100 transition-opacity">
-                    {member.socials.map((social, idx) => (
-                      <SocialIcon
-                        key={idx}
-                        url={social.url}
-                        fgColor="#fff"
-                        bgColor="transparent"
-                        style={{ height: 30, width: 30, border: '1px solid #334155', borderRadius: '50%' }}
-                        className="hover:border-primary transition-colors"
-                      />
-                    ))}
-                  </div>
-                </div>
+                </ThemeCard>
               ))}
             </div>
           </div>

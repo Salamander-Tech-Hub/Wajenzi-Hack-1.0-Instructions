@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 const Bg = "/contact-component.png";
 import NavBar from '../components/Navbar';
+import ThemeButton from '../components/ThemeButton';
 
 interface ContactForm {
   firstName: string;
@@ -137,24 +138,9 @@ const ContactSection: React.FC = () => {
               </div>
 
               {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50 shadow-lg hover:shadow-xl border-2 border-transparent"
-                style={{
-                  backgroundColor: '#FFED00',
-                  color: '#000000'
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.backgroundColor = '#FFD700';
-                  e.currentTarget.style.borderColor = '#FFED00';
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.backgroundColor = '#FFED00';
-                  e.currentTarget.style.borderColor = 'transparent';
-                }}
-              >
+              <ThemeButton type="submit" variant="primary" className="w-full py-4">
                 SEND MESSAGE
-              </button>
+              </ThemeButton>
             </form>
           </div>
 

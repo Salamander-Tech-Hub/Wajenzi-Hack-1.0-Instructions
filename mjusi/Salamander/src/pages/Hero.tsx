@@ -1,6 +1,10 @@
 import NavBar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import TextType from "../components/TextType/TextType";
+import ThemeButton from "../components/ThemeButton";
+import ThemeCard from "../components/ThemeCard";
+import LongShadowText from "../components/LongShadowText";
+import KineticText from "../components/KineticText";
 
 const MainPage = () => {
   return (
@@ -34,18 +38,14 @@ const MainPage = () => {
                       showCursor={true}
                     />
                   </span><br />
-                  <span className="text-white">Evolve.</span>
+                  <KineticText as="span" className="text-white" delay={0.4}>Evolve.</KineticText>
                 </h1>
                 <p className="text-lg md:text-xl text-gray-400 max-w-lg leading-relaxed">
                   High-end developer services for ambitious teams. We build battle-tested software and contribute to the global open-source ecosystem.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <Link to="/contact" className="inline-flex justify-center items-center bg-yellow-300 text-black px-8 py-4 rounded-sm font-bold hover:bg-white transition-all duration-300 shadow-[0_0_15px_rgba(244,208,63,0.4)] hover:shadow-white/20">
-                    Book a consultation
-                  </Link>
-                  <a href="https://github.com/Salamander-Tech-Hub" target="_blank" rel="noopener noreferrer" className="inline-flex justify-center items-center bg-transparent border border-white/20 text-yellow-300 px-8 py-4 rounded-sm font-semibold hover:border-yellow-300 hover:bg-yellow-300/10 transition-all duration-300">
-                    View our GitHub <span className="ml-2">→</span>
-                  </a>
+                  <ThemeButton to="/contact" variant="primary">Book a consultation</ThemeButton>
+                  <ThemeButton href="https://github.com/Salamander-Tech-Hub" variant="secondary" newTab>View our GitHub →</ThemeButton>
                 </div>
               </div>
 
@@ -78,14 +78,16 @@ const MainPage = () => {
         <section className="py-24 relative" id="projects" style={{ background: "radial-gradient(circle at center top, #1a1a1a 0%, #000000 100%)" }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Open-Source Initiatives</h2>
+              <LongShadowText shadowLength={10} className="text-3xl md:text-5xl font-bold mb-4 block" as="h2">
+                Open-Source Initiatives
+              </LongShadowText>
               <p className="text-gray-500 max-w-2xl mx-auto mb-8">Our commitment to the community goes beyond code. We build tools that empower developers worldwide.</p>
               <div className="w-20 h-1 bg-yellow-300 mx-auto"></div>
             </div>
 
             {/* Project Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* Card 1 */}
+              <ThemeCard className="h-full">
               <ProjectCard
                 icon="hub"
                 label="Distributed Core"
@@ -94,8 +96,8 @@ const MainPage = () => {
                 tags={["Communication", "Python", "GitHub Actions", "CI/CD"]}
                 image="https://lh3.googleusercontent.com/aida-public/AB6AXuAAeAWT2R6UUIFy7_Xu35EKcAI6GzAUk8hXp04gcGli8nNgWx4LH9TpUviZkIQqoFFQlb3qaXjhpmvbqnore-kHEycaxevjcTgn1ntacyHyVCsIzo53CoKznIfqN30Xjj_PiFOE1FVRJI5Cwtc0wMbKzfvww1iRV7J8vdFk-cgEflMWw30VbgIwAH4r9a6zGEvFezBfpP7l0iyRZAokYQMO0JU852LVus4GoPjwZg0YUfecbzgRDWE1t9DvQqYYb7oFed6CoJS-zHoj"
               />
-
-              {/* Card 2 */}
+              </ThemeCard>
+              <ThemeCard className="h-full">
               <ProjectCard
                 icon="public"
                 label="Global Infrastructure"
@@ -104,8 +106,8 @@ const MainPage = () => {
                 tags={["PostgreSQL", "Docker", "APIs"]}
                 image="https://lh3.googleusercontent.com/aida-public/AB6AXuD1EBSZh_yY-HSCyhu_wX_B9X8qikFEjuRD0b_EbbjZp4wkozXx3RPPltNC49KD6Q5-QCg1Fkk_obO435c_OQ1oEEXNM8TYC0Div3F_jk6jw0wK8JnHxNHOpNHkwkg7hErBgRbWPnPfc96laPMBfr8LCJ73p1xQHWM864qi7KzKtl_uxXPL8w7CY9b0TXgp0bUQcZY9Kye_Wff5X_Z7dD0wLWoECe4vKbVfzcPgnY_1q_p3JJj1fkcJH8CNuPt_aOXFgHdTB8iEqpTz"
               />
-
-              {/* Card 3 */}
+              </ThemeCard>
+              <ThemeCard className="h-full">
               <ProjectCard
                 icon="conversion_path"
                 label="Dev Lifecycle"
@@ -114,8 +116,8 @@ const MainPage = () => {
                 tags={["TypeScript", "React", "Testing"]}
                 image="https://lh3.googleusercontent.com/aida-public/AB6AXuAjErb7W9uMLZW089a6ZeW_b_OSvqo9IvLOx9Oo-SgUhK8F6DweVw6ueWI_35ptJLsBYF6KticGygHkvrCaPR_ScRkDo4gHE3iXoCHwpmPonAw9E6Wu2sXRyKjvKdC3RFHBdgrzvq7kpmJtJSKVTTn3B1Ox_cVv0X_CMS4OG2uJVIlkkDUbn54Z_sBQB4Y_l_k1-TSmh0u5uSeCq4SlQdl6Ga_I0lUrQ683LcbeLW2WeJ6UTXLg6Q982nOYlyPlVJfGReQak04hMTXh"
               />
-
-              {/* Card 4 */}
+              </ThemeCard>
+              <ThemeCard className="h-full">
               <ProjectCard
                 icon="security"
                 label="Trust Engine"
@@ -124,14 +126,12 @@ const MainPage = () => {
                 tags={["Cryptography", "Java", "WebAssembly"]}
                 image="https://lh3.googleusercontent.com/aida-public/AB6AXuB4xD_gOlmkMCVkknokA8ks52dImxTqJSO9887myr8DLeKbOYr41Sb4FQNsbjFxW33dESouEtpIlJTId5HnkJC9-HGQd0PAxlsE4t_B9_1nWeMEvpKQ1BiYBuJuDry7ITCcj3U0I9uPDWa1yqKOb_zBZpLFcabFSNRn05Bk18viHXQWk0lLyGcVdlUOBFaVoVssOdr7E09i_bzt1qQ0IG0kaFjuFRnAzj-JPpe-qBGk2LnBr_avMgAu7PNAdaigUv3kOXl770M8uddY"
               />
+              </ThemeCard>
             </div>
 
             {/* Explore Button */}
             <div className="mt-16 text-center">
-              <Link to="/contact" className="inline-flex items-center gap-2 bg-yellow-300 text-black px-10 py-3 rounded-sm hover:bg-white transition-all duration-300 font-bold tracking-wide">
-                <span>Explore All Projects</span>
-                <span>→</span>
-              </Link>
+              <ThemeButton to="/contact" variant="primary">Explore All Projects →</ThemeButton>
             </div>
           </div>
         </section>

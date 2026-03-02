@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Menu from "../data/Menu";
+import ThemeButton from "./ThemeButton";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -43,12 +44,7 @@ const NavBar = () => {
 
           {/* Inquire Button */}
           <div className="flex items-center">
-            <Link 
-              to="/contact"
-              className="bg-yellow-300 text-black px-6 py-2.5 rounded-sm font-bold text-sm hover:bg-white transition-colors duration-300 uppercase tracking-wide"
-            >
-              Inquire
-            </Link>
+            <ThemeButton to="/contact" variant="primary">Inquire</ThemeButton>
           </div>
         </div>
       </div>
