@@ -2,8 +2,18 @@ import React from 'react';
 import NavBar from '../components/Navbar';
 import { SocialIcon } from 'react-social-icons';
 import ThemeCard from '../components/ThemeCard';
+import ThemeButton from '../components/ThemeButton';
+import MediaPlaceholder from '../components/MediaPlaceholder';
 
-// Types
+import andrewKimImg from '../assets/team/andrew-kim-j.svg';
+import sharonMurugiImg from '../assets/team/sharon-murugi.svg';
+import adrianCharlesImg from '../assets/team/adrian-charles.svg';
+import randyLuttaImg from '../assets/team/randy-lutta.svg';
+import sidneyBarakaImg from '../assets/team/sidney-baraka.svg';
+import steveKingoroImg from '../assets/team/steve-kingoro.svg';
+import christianTazmaImg from '../assets/team/christian-tazma.svg';
+import charlesMbuguaImg from '../assets/team/charles-mbugua.svg';
+
 interface TeamMember {
   name: string;
   role: string;
@@ -12,132 +22,84 @@ interface TeamMember {
   socials: { url: string; label: string }[];
 }
 
-// Component
 const AboutPage: React.FC = () => {
   const founders = [
     {
-      name: "Andrew Kim",
-      role: "Co-Founder & CTO",
-      bio: "Former lead engineer at global tech giants, Marcus envisioned Salamander as the bridge between corporate excellence and open-source freedom.",
-      avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuBzkySrK5sNPxNyBrJTZv3MrMsoqRNgwgmKESDKu1BYMCIF4wRYVvwO5ILz1YigxwYKHGjHXDHVTwMrY4QRUYfPuqJ8DSSLlXYuvi76sbPKuQu5jtrrgMNP-cPmOVf4yI8kzJN3HrLV2L2IcpfqOkIKv5-yw99I6ZuNOoUrOrn0JMumXSLT9A7Tcs5i2ovEHkK7Hmez3nfhQtysbTQ9ghN2rSKZVLyCM-XfIALYA_K-hS3IWIPIBad25bVYBQ68oZ3-T71EexgBp2M",
+      name: 'Andrew Kim J.',
+      role: 'Project Author & Technical Lead',
+      bio: 'Leads the technical vision and architecture for Salamander projects.',
+      avatar: andrewKimImg,
       socials: [
-        { url: "https://linkedin.com", label: "LinkedIn" },
-        { url: "https://github.com", label: "GitHub" },
-        { url: "https://twitter.com", label: "Twitter" }
-      ]
+        { url: 'https://linkedin.com', label: 'LinkedIn' },
+        { url: 'https://github.com', label: 'GitHub' },
+      ],
     },
     {
-      name: "Martha Sharon",
-      role: "Co-Founder & CEO",
-      bio: "With a background in community building and venture capital, Martha drives the strategic growth and cultural integrity of the Salamander hub.",
-      avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuAJZQT8FLpt_BU5ScoBAqaRrSTaNXPxyFBlrlyjOlykWcPhegQwx-WlxeaV5Fs4hpON1-doqlWHyS7ucEyAHAOAuBFp4u98w9y9mRLXGnlXfUZJCMorReAuvsD31MryLzeG93yz_ChzzMGuHZEIIdajgQf5w6zCRPmLQc4_cqQaB-1HyRvXmka8RDknnKGx9U9X2YyG9cGrWbTdzsChwKDeDsC24lhD0r6BJcbqfAgl4Z46uiTzNYVhnfhBIbZTewy6vcT5QgibBBw",
+      name: 'Sharon Murugi',
+      role: 'Project Author & Community Lead',
+      bio: 'Drives community engagement and authors key learning materials for contributors.',
+      avatar: sharonMurugiImg,
       socials: [
-        { url: "https://linkedin.com", label: "LinkedIn" },
-        { url: "https://twitter.com", label: "Twitter" }
-      ]
-    }
+        { url: 'https://linkedin.com', label: 'LinkedIn' },
+        { url: 'https://twitter.com', label: 'Twitter' },
+      ],
+    },
   ];
 
   const coreTeam: TeamMember[] = [
-    {
-      name: "David Chen",
-      role: "Head of Infrastructure",
-      bio: "Scaling our hub to support millions of concurrent developers and repositories.",
-      avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuDAfdN2mnjfPy_eR7JrbiM3lz0yRF_jV5eDHgi0OUFGbCoP98N88KplG95_rGx4mNeL22m--KRcZBmEnD7_DoErPsWYUeEWJ-t7RMNdwDUOJhSN_16mNy9gJ3By2jW0G8Ym385hoW1Z8GA2yxIQjcnztdmbnzVbI60lpjQAo5peaGd5kiRk-IAvSdUaNbCa4QoCFeMc0bZseJBQjJhxYNidUcLui_ai3f2EgAlxJwrcazFn-UKT8HrQ5h3Xp7j66h35In_B-WEQpFI",
-      socials: [
-        { url: "https://linkedin.com", label: "LinkedIn" },
-        { url: "https://github.com", label: "GitHub" }
-      ]
-    },
-    {
-      name: "Sarah Jenkins",
-      role: "Director of Community",
-      bio: "Fostering an inclusive environment where every developer feels at home.",
-      avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuDQZ-JW448YDvxQfv7SFsmAZLZniSytkFkCFXqw0Hd76UILMv7bts_oo2X37CvpJX8xxeDzyvY24tXZp1crv1KzHTCsSAsl7MA3dFIda6um2x6ejcUwPwHKwMS1ro-CCIcgvhEpR8lzpJjrbmK7xpvrtqpqr3MWn-Iar26NPzjKVJQHnc0kkXQDkvr6VRVsnwc3X11E77DhLDuZfNmVDYSALPQ8Kl2yoo2gRsGUZg6XQvGzj_vjWnfR0AiXyF38125xjVjlhk3lxXQ",
-      socials: [
-        { url: "https://linkedin.com", label: "LinkedIn" },
-        { url: "https://twitter.com", label: "Twitter" }
-      ]
-    },
-    {
-      name: "Alex Rivera",
-      role: "Lead Designer",
-      bio: "Crafting the visual language that makes open source beautiful and functional.",
-      avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuDbiRDNqz8hPB408sz2ezaC6mTc9gPgh7O3xNZPO3cU4h_M0TUhEljLEd84c-fBnSwn_I4P8vEoyDJee6Gl3PAzEBl99h9vr9LkUTJ-A1QahpSboWdj_jxsoJCLyvM-Ao5c-Pz_nMR1Unv0FPFbgvoLfSHNJ5TtKqmJsbj78BavhtMlE5VDltqFAZrvKwG4qX7zaZHYYWZtKSQOG3bdv23MB0B_-t7SOWawKFLhGbBrED4IHHNpD-JtGBuw-9KeWVAYLNN5Q0fdo2c",
-      socials: [
-        { url: "https://dribbble.com", label: "Dribbble" },
-        { url: "https://behance.net", label: "Behance" }
-      ]
-    },
-    {
-      name: "Maya Patel",
-      role: "DevOps Architect",
-      bio: "Automating the path from code to production for thousands of projects.",
-      avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuB92ePUgyUj4fOKFkzyQLBA5wB-7zdMljfEcemlDGReU9rbxm8nAykBHhYF72WgaxRPlj1lCWZc7Ub-wr9iy_Y7C5E9YSxKUYSkkYWPWX9SiRWbRmMgAY_7Zm3OLiPIsRNisJ1fwClTiLR2qY5hSFYRLSrfEtVxcFKGi-tnqZaShe9DDywC-fiA37YrT3XYWz57iCz4O0xmzqVdyTgIVFKg1T-WatdcbRUhCyrkqoylIRS2EPosB7hZmxyT0j2_RZ2zHf_E4ODgBIw",
-      socials: [
-        { url: "https://github.com", label: "GitHub" },
-        { url: "https://linkedin.com", label: "LinkedIn" }
-      ]
-    },
-    {
-      name: "James Wilson",
-      role: "Security Lead",
-      bio: "Ensuring the integrity and safety of our decentralized network protocol.",
-      avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuAY1oUd1Uc8jhioWOcpmcdGS2ThhqMLaW0imRjzfrr1aV3Z8_sIaNKErzhRlyk7AGRFVZKt8J6jpefBsF_9nUJtKdDCmNtaBMkHdo7fGmSki3-2KjXsbDx0rEnSNCKlLMSlH0jfUO0r1z1AXCxYXqn_I5QmMX7oGSzN1iR9PbA-29V9Nn8CR9dEdqEx3mOmOGMgwa0Rxdzg4ldQwcy97iHsxmgk1JtRupmI7rq0cV_oqkAuYnfAM-DmlngeTjU4AtH8Dzo22dBKjmE",
-      socials: [
-        { url: "https://linkedin.com", label: "LinkedIn" },
-        { url: "https://twitter.com", label: "Twitter" }
-      ]
-    },
-    {
-      name: "Sophie Dubois",
-      role: "Open Source Advocate",
-      bio: "Bridging the gap between corporate partners and independent contributors.",
-      avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuAY1oUd1Uc8jhioWOcpmcdGS2ThhqMLaW0imRjzfrr1aV3Z8_sIaNKErzhRlyk7AGRFVZKt8J6jpefBsF_9nUJtKdDCmNtaBMkHdo7fGmSki3-2KjXsbDx0rEnSNCKlLMSlH0jfUO0r1z1AXCxYXqn_I5QmMX7oGSzN1iR9PbA-29V9Nn8CR9dEdqEx3mOmOGMgwa0Rxdzg4ldQwcy97iHsxmgk1JtRupmI7rq0cV_oqkAuYnfAM-DmlngeTjU4AtH8Dzo22dBKjmE",
-      socials: [
-        { url: "https://linkedin.com", label: "LinkedIn" },
-        { url: "https://twitter.com", label: "Twitter" }
-      ]
-    }
+    { name: 'Adrian Charles', role: 'Partnerships and Outreach Lead', bio: 'Builds and maintains partner relationships and outreach programs.', avatar: adrianCharlesImg, socials: [{ url: 'https://linkedin.com', label: 'LinkedIn' }] },
+    { name: 'Randy Lutta', role: 'Team Member', bio: 'Contributes across features and community initiatives.', avatar: randyLuttaImg, socials: [{ url: 'https://github.com', label: 'GitHub' }] },
+    { name: 'Sidney Baraka', role: 'Community Manager', bio: 'Organizes events and supports community contributors.', avatar: sidneyBarakaImg, socials: [{ url: 'https://twitter.com', label: 'Twitter' }] },
+    { name: 'Steve Kingoro', role: 'Team Member', bio: 'Works on integrations and project polish.', avatar: steveKingoroImg, socials: [{ url: 'https://linkedin.com', label: 'LinkedIn' }] },
+    { name: 'Christian Tazma', role: 'Open Source Projects Lead', bio: 'Coordinates open-source initiatives and contributor workflows.', avatar: christianTazmaImg, socials: [{ url: 'https://github.com', label: 'GitHub' }] },
+    { name: 'Charles Mbugua', role: 'Maintainer', bio: 'Maintains core repos and reviews community PRs.', avatar: charlesMbuguaImg, socials: [{ url: 'https://github.com', label: 'GitHub' }] },
   ];
 
   return (
     <div className="flex flex-col min-h-screen bg-background-dark font-sans text-slate-200">
       <NavBar />
 
-      <main className="flex-grow">
-        <section className="relative pt-24 pb-20 overflow-hidden">
+      <main className="flex-grow pt-20">
+        {/* Hero */}
+        <section className="relative pt-16 pb-12 overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none opacity-20">
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 blur-[120px] rounded-full"></div>
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 blur-[120px] rounded-full" />
           </div>
           <div className="container mx-auto px-6 relative z-10 text-center">
-            <h1 className="text-6xl md:text-8xl font-black text-white mb-6">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6">
               About <span className="text-primary text-glow italic">Salamander</span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-              A community dedicated to educating and empowering people to contribute to <span className="text-primary font-bold">open source software</span>.
+            <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-12">
+              A community dedicated to educating and empowering people to contribute to{' '}
+              <span className="text-primary font-bold">open source software</span>.
             </p>
+            {/* Hero media placeholder – full-width banner / hero video */}
+            <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden">
+              <MediaPlaceholder type="video" aspectRatio="wide" label="Hero video or banner image" className="w-full" />
+            </div>
           </div>
         </section>
 
+        {/* Mission + media */}
         <section className="py-20 bg-accent-dark/40 border-y border-slate-800/50">
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h2 className="text-4xl font-bold text-white mb-6">Our Mission</h2>
+                <span className="text-primary font-black uppercase tracking-[0.2em] text-xs">What we do</span>
+                <h2 className="text-4xl font-bold text-white mt-2 mb-6">Our Mission</h2>
                 <p className="text-lg text-slate-400 leading-relaxed mb-8">
                   At Salamander, we believe that open source is for everyone. Our mission is to demystify open source contribution and create a welcoming space for learners at all levels. We forge the tools that power the future, one pull request at a time.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
-                    <span className="material-symbols-outlined text-primary mt-1">check_circle</span>
+                    <span className="text-primary mt-1 text-xl">✓</span>
                     <div>
                       <h4 className="font-bold text-white">Open by Design</h4>
                       <p className="text-slate-400">Everything we build is accessible, transparent, and collaborative.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <span className="material-symbols-outlined text-primary mt-1">check_circle</span>
+                    <span className="text-primary mt-1 text-xl">✓</span>
                     <div>
                       <h4 className="font-bold text-white">Community Driven</h4>
                       <p className="text-slate-400">Decisions are made by the people who write the code.</p>
@@ -145,47 +107,90 @@ const AboutPage: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-background-dark p-8 rounded-2xl border border-slate-800 flex flex-col justify-center items-center text-center">
-                  <span className="text-5xl font-black text-primary mb-2">500+</span>
-                  <span className="text-sm uppercase tracking-widest text-slate-500 font-bold">Active Members</span>
-                </div>
-                <div className="bg-background-dark p-8 rounded-2xl border border-slate-800 flex flex-col justify-center items-center text-center">
-                  <span className="text-5xl font-black text-primary mb-2">1k+</span>
-                  <span className="text-sm uppercase tracking-widest text-slate-500 font-bold">Contributions</span>
-                </div>
-                <div className="bg-background-dark p-8 rounded-2xl border border-slate-800 flex flex-col justify-center items-center text-center col-span-2">
-                  <span className="text-5xl font-black text-primary mb-2">100%</span>
-                  <span className="text-sm uppercase tracking-widest text-slate-500 font-bold">Open Source</span>
-                </div>
+              <ThemeCard className="overflow-hidden">
+                <MediaPlaceholder type="image" aspectRatio="portrait" label="Mission / team photo or video" className="w-full" />
+              </ThemeCard>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats strip */}
+        <section className="py-12 border-b border-slate-800/50">
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <ThemeCard className="p-8 text-center">
+                <span className="text-5xl font-black text-primary block mb-2">500+</span>
+                <span className="text-sm uppercase tracking-widest text-slate-500 font-bold">Active Members</span>
+              </ThemeCard>
+              <ThemeCard className="p-8 text-center">
+                <span className="text-5xl font-black text-primary block mb-2">1k+</span>
+                <span className="text-sm uppercase tracking-widest text-slate-500 font-bold">Contributions</span>
+              </ThemeCard>
+              <ThemeCard className="p-8 text-center">
+                <span className="text-5xl font-black text-primary block mb-2">100%</span>
+                <span className="text-sm uppercase tracking-widest text-slate-500 font-bold">Open Source</span>
+              </ThemeCard>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Story – alternating text + media */}
+        <section className="py-24">
+          <div className="container mx-auto px-6">
+            <span className="text-primary font-black uppercase tracking-[0.2em] text-xs">The story</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mt-2 mb-16">Why we exist</h2>
+
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-4">From idea to community</h3>
+                <p className="text-slate-400 leading-relaxed">
+                  Salamander started with a simple belief: that everyone can contribute to open source. We built a space where engineers, designers, and makers learn together and ship in the open.
+                </p>
+              </div>
+              <ThemeCard>
+                <MediaPlaceholder type="image" aspectRatio="video" label="Story image or short video" className="w-full" />
+              </ThemeCard>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <ThemeCard className="order-2 lg:order-1">
+                <MediaPlaceholder type="image" aspectRatio="video" label="Office / culture / event photo" className="w-full" />
+              </ThemeCard>
+              <div className="order-1 lg:order-2">
+                <h3 className="text-2xl font-bold text-white mb-4">Build. Burn. Evolve.</h3>
+                <p className="text-slate-400 leading-relaxed">
+                  We iterate in public, embrace feedback, and keep our tools and processes transparent. That’s how we stay aligned with the community we serve.
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="py-32">
+        {/* Founding Partners – with image placeholders */}
+        <section className="py-24 bg-accent-dark/40 border-y border-slate-800/50">
           <div className="container mx-auto px-6">
-            <div className="mb-16">
-              <span className="text-primary font-black uppercase tracking-[0.3em] text-xs">The Visionaries</span>
-              <h2 className="text-5xl font-bold text-white mt-2">Founding Partners</h2>
-            </div>
+            <span className="text-primary font-black uppercase tracking-[0.3em] text-xs">The visionaries</span>
+            <h2 className="text-5xl font-bold text-white mt-2 mb-16">Founding Partners</h2>
             <div className="grid md:grid-cols-2 gap-12">
               {founders.map((founder, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-3xl bg-accent-dark border border-slate-800">
+                <ThemeCard key={index} className="overflow-hidden">
                   <div className="aspect-[4/5] relative">
-                    <img
-                      alt={founder.name}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
-                      src={founder.avatar}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent z-10"></div>
-                    <div className="absolute bottom-0 left-0 p-10 z-20 w-full">
-                      <h3 className="text-4xl font-bold text-white mb-2">{founder.name}</h3>
-                      <p className="text-primary font-mono text-sm uppercase tracking-widest mb-6">{founder.role}</p>
-                      <p className="text-slate-300 text-lg leading-relaxed max-w-md opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
-                        {founder.bio}
-                      </p>
-                      <div className="flex gap-4 mt-6 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-200">
+                    {/* Replace this block with <img src={founder.avatar} /> when you have the photo */}
+                    {founder.avatar ? (
+                      <img
+                        alt={founder.name}
+                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                        src={founder.avatar}
+                      />
+                    ) : (
+                      <MediaPlaceholder type="image" aspectRatio="portrait" label={`${founder.name} – add photo`} className="w-full h-full rounded-none border-0" />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent z-10 pointer-events-none" />
+                    <div className="absolute bottom-0 left-0 p-8 z-20 w-full">
+                      <h3 className="text-3xl font-bold text-white mb-1">{founder.name}</h3>
+                      <p className="text-primary font-mono text-sm uppercase tracking-widest mb-4">{founder.role}</p>
+                      <p className="text-slate-300 leading-relaxed max-w-md">{founder.bio}</p>
+                      <div className="flex gap-3 mt-6">
                         {founder.socials.map((social, idx) => (
                           <SocialIcon
                             key={idx}
@@ -199,25 +204,43 @@ const AboutPage: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </ThemeCard>
               ))}
             </div>
           </div>
         </section>
 
+        {/* Culture / “See us in action” video placeholder */}
+        <section className="py-24">
+          <div className="container mx-auto px-6">
+            <h2 className="text-4xl font-bold text-white text-center mb-4">See us in action</h2>
+            <p className="text-slate-400 text-center max-w-xl mx-auto mb-12">
+              A short clip of our culture, events, or day-to-day. Drop your video here.
+            </p>
+            <ThemeCard className="overflow-hidden max-w-4xl mx-auto">
+              <MediaPlaceholder type="video" aspectRatio="video" label="Company or culture video" className="w-full" />
+            </ThemeCard>
+          </div>
+        </section>
+
+        {/* Core Leadership */}
         <section className="py-24 bg-slate-900/30">
           <div className="container mx-auto px-6">
-            <div className="text-center mb-20">
-              <h2 className="text-4xl font-bold text-white mb-4">Core Leadership</h2>
-              <p className="text-slate-400 max-w-2xl mx-auto italic">The experts driving our key initiatives and community growth.</p>
-            </div>
+            <h2 className="text-4xl font-bold text-white text-center mb-4">Core Leadership</h2>
+            <p className="text-slate-400 text-center max-w-2xl mx-auto italic mb-16">The experts driving our key initiatives and community growth.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {coreTeam.map((member, index) => (
                 <ThemeCard key={index}>
                   <div className="p-8 bg-background-dark/50 group relative h-full">
-                    <div className="w-20 h-20 rounded-full overflow-hidden mb-6 grayscale group-hover:grayscale-0 transition-all">
-                      <img alt={member.name} className="w-full h-full object-cover" src={member.avatar} />
-                    </div>
+                    {member.avatar ? (
+                      <div className="w-20 h-20 rounded-full overflow-hidden mb-6 grayscale group-hover:grayscale-0 transition-all">
+                        <img alt={member.name} className="w-full h-full object-cover" src={member.avatar} />
+                      </div>
+                    ) : (
+                      <div className="w-20 h-20 rounded-full border-2 border-dashed border-primary/40 bg-slate-800/60 flex items-center justify-center mb-6">
+                        <span className="text-primary/60 text-xs font-bold text-center px-2">Photo</span>
+                      </div>
+                    )}
                     <h4 className="text-xl font-bold text-white">{member.name}</h4>
                     <p className="text-primary font-mono text-xs uppercase tracking-wider mb-4">{member.role}</p>
                     <p className="text-sm text-slate-400 leading-relaxed mb-6">{member.bio}</p>
@@ -239,6 +262,15 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* CTA */}
+        <section className="py-20 border-t border-slate-800/50">
+          <div className="container mx-auto px-6 text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">Join the community</h2>
+            <p className="text-slate-400 max-w-xl mx-auto mb-8">Ready to contribute or partner with us? Get in touch.</p>
+            <ThemeButton to="/contact" variant="primary">Get in touch</ThemeButton>
+          </div>
+        </section>
       </main>
 
       <footer className="bg-background-dark border-t border-slate-800">
@@ -246,7 +278,7 @@ const AboutPage: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
-                <span className="material-symbols-outlined text-slate-900 text-sm">all_inclusive</span>
+                <span className="text-slate-900 text-sm font-bold">∞</span>
               </div>
               <span className="text-lg font-bold text-white">Salamander</span>
             </div>
