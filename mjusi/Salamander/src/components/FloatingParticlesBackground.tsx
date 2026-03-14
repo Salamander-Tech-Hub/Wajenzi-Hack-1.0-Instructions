@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 
 interface Particle {
   x: number;
@@ -49,7 +49,7 @@ export default function FloatingParticlesBackground({
   className = '',
 }: FloatingParticlesBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
   const mouseRef = useRef({ x: 0, y: 0 });
   const particlesRef = useRef<Particle[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -83,7 +83,7 @@ export default function FloatingParticlesBackground({
       const rect = canvas.getBoundingClientRect();
       const mouse = mouseRef.current;
 
-      particlesRef.current.forEach((particle, index) => {
+      particlesRef.current.forEach((particle) => {
         const dx = mouse.x - particle.x;
         const dy = mouse.y - particle.y;
         const distance = Math.sqrt(dx * dx + dy * dy);

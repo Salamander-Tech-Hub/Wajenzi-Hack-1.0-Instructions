@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Menu from "../data/Menu";
 import ThemeButton from "./ThemeButton";
+import salamanderLogo from "../assets/salamanderlogo.jpeg";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -23,19 +24,23 @@ const NavBar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-3">
-            <Link to="/" className="text-white text-xl tracking-tight hover:text-yellow-300 transition-colors">
-              <span className="font-bold">Salamander</span> Tech Hub
+          <div className="flex-shrink-0 flex items-center">
+            <Link to="/" className="flex items-center">
+              <img
+                src={salamanderLogo}
+                alt="Salamander Tech Hub logo"
+                className="h-14 w-auto object-contain"
+              />
             </Link>
           </div>
 
           {/* Navigation Menu */}
-          <nav aria-label="Main Navigation" className="hidden md:flex space-x-8">
+          <nav aria-label="Main Navigation" className="hidden md:flex space-x-10">
             {Menu.map((item, index) => (
               <Link
                 key={index}
                 to={item.path}
-                className="text-sm font-medium text-gray-300 hover:text-yellow-300 transition-colors duration-200"
+                className="text-base font-semibold text-gray-200 hover:text-yellow-300 transition-colors duration-200"
               >
                 {item.name}
               </Link>

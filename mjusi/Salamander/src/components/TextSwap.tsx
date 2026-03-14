@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
 type Props = { words: string[]; intervalMs?: number; className?: string; as?: 'span' | 'h1' | 'h2'; };

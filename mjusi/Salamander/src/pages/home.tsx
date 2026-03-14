@@ -5,6 +5,7 @@ import ThemeButton from "../components/ThemeButton";
 import ThemeCard from "../components/ThemeCard";
 import LongShadowText from "../components/LongShadowText";
 import KineticText from "../components/KineticText";
+import salamanderLogo from "../assets/salamanderlogo.jpeg";
 
 const MainPage = () => {
   return (
@@ -129,10 +130,6 @@ const MainPage = () => {
               </ThemeCard>
             </div>
 
-            {/* Explore Button */}
-            <div className="mt-16 text-center">
-              <ThemeButton to="/contact" variant="primary">Explore All Projects →</ThemeButton>
-            </div>
           </div>
         </section>
 
@@ -171,7 +168,10 @@ const MainPage = () => {
               </div>
             </div>
             <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-xs text-gray-600">© 2026 Salamander Tech Hub. All rights reserved.</p>
+              <div className="flex items-center gap-2">
+                <img src={salamanderLogo} alt="Salamander Tech Hub logo" className="h-8 w-auto object-contain" />
+                <p className="text-xs text-gray-600">© 2026 Salamander Tech Hub. All rights reserved.</p>
+              </div>
               <p className="text-xs text-gray-600">Built with transparency and intent.</p>
             </div>
           </div>
@@ -265,6 +265,7 @@ const socialStyles = {
     alignItems: 'center',
     justifyContent: 'center',
   } as React.CSSProperties,
+  
   css: `
     .social-cards-container {
       position: relative;

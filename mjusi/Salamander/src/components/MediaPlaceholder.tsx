@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface MediaPlaceholderProps {
   type: 'image' | 'video';
   label?: string;
