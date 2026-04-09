@@ -9,7 +9,7 @@ Create a new version of the Salamander Tech Hub's landing page. View the current
 - Solo work is **not allowed**
 - **The use of AI is allowed**
 
-## Project Guidelines
+## Project Guidelines....
 
 ### 1. Website Requirements
 Create a website inspired by the landing page that:
