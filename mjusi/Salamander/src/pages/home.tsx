@@ -7,6 +7,66 @@ import LongShadowText from "../components/LongShadowText";
 import KineticText from "../components/KineticText";
 import salamanderLogo from "../assets/salamanderlogo.jpeg";
 
+// ProjectCard Component
+interface ProjectCardProps {
+  icon?: string;
+  label: string;
+  title: string;
+  description: string;
+  tags: string[];
+  image: string;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ label, title, description, tags, image }) => {
+  return (
+    <article
+      className="rounded-md overflow-hidden flex flex-col h-full group"
+      style={{
+        transition: "all 0.3s ease",
+        border: "1px solid rgba(244, 208, 63, 0.2)",
+        boxShadow: "0 0 15px rgba(252, 211, 77, 0.1)",
+        backgroundColor: "rgba(17, 17, 17, 0.8)"
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.borderColor = "#F4D03F";
+        e.currentTarget.style.boxShadow = "0 0 30px rgba(244, 208, 63, 0.3)";
+        e.currentTarget.style.transform = "translateY(-5px)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.borderColor = "rgba(244, 208, 63, 0.2)";
+        e.currentTarget.style.boxShadow = "0 0 15px rgba(252, 211, 77, 0.1)";
+        e.currentTarget.style.transform = "translateY(0)";
+      }}
+    >
+      <div className="h-48 overflow-hidden relative bg-gray-900 border-b border-white/5">
+        <img alt={title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={image} />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+        <div className="absolute bottom-4 left-4 flex items-center gap-2">
+          <span className="text-yellow-300 text-sm">★</span>
+          <span className="text-[10px] font-bold uppercase tracking-widest text-white/70">{label}</span>
+        </div>
+      </div>
+      <div className="p-6 flex flex-col flex-grow">
+        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors">{title}</h3>
+        <p className="text-sm text-gray-400 mb-6 flex-grow">{description}</p>
+        <div className="flex flex-wrap gap-2 mt-auto">
+          {tags.map((tag, idx) => (
+            <span
+              key={idx}
+              className={`text-[10px] font-mono px-2 py-1 rounded ${idx === 0
+                ? "border border-yellow-300/30 text-yellow-300 bg-yellow-300/5"
+                : "border border-white/10 text-gray-400"
+                }`}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </article>
+  );
+};
+
 const MainPage = () => {
   return (
     <>
@@ -42,7 +102,9 @@ const MainPage = () => {
                   <KineticText as="span" className="text-white" delay={0.4}>Evolve.</KineticText>
                 </h1>
                 <p className="text-lg md:text-xl text-gray-400 max-w-lg leading-relaxed">
-                  High-end developer services for ambitious teams. We build battle-tested software and contribute to the global open-source ecosystem.
+                  Building Umoja in Kenya’s Open Source Community.<br />
+                  Fostering collaboration, innovation, and shared knowledge.<br />
+                  Empowering developers to create solutions for Africa and beyond
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <ThemeButton to="/contact" variant="primary">View our shop</ThemeButton>
@@ -89,44 +151,44 @@ const MainPage = () => {
             {/* Project Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <ThemeCard className="h-full">
-              <ProjectCard
-                icon="hub"
-                label="Distributed Core"
-                title="Community-Built Core Tool"
-                description="Focusing on distributed collaboration and battle-tested software stability for enterprise environments."
-                tags={["Communication", "Python", "GitHub Actions", "CI/CD"]}
-                image="https://lh3.googleusercontent.com/aida-public/AB6AXuAAeAWT2R6UUIFy7_Xu35EKcAI6GzAUk8hXp04gcGli8nNgWx4LH9TpUviZkIQqoFFQlb3qaXjhpmvbqnore-kHEycaxevjcTgn1ntacyHyVCsIzo53CoKznIfqN30Xjj_PiFOE1FVRJI5Cwtc0wMbKzfvww1iRV7J8vdFk-cgEflMWw30VbgIwAH4r9a6zGEvFezBfpP7l0iyRZAokYQMO0JU852LVus4GoPjwZg0YUfecbzgRDWE1t9DvQqYYb7oFed6CoJS-zHoj"
-              />
+                <ProjectCard
+                  icon="hub"
+                  label="Distributed Core"
+                  title="Community-Built Core Tool"
+                  description="Focusing on distributed collaboration and battle-tested software stability for enterprise environments."
+                  tags={["Communication", "Python", "GitHub Actions", "CI/CD"]}
+                  image="https://lh3.googleusercontent.com/aida-public/AB6AXuAAeAWT2R6UUIFy7_Xu35EKcAI6GzAUk8hXp04gcGli8nNgWx4LH9TpUviZkIQqoFFQlb3qaXjhpmvbqnore-kHEycaxevjcTgn1ntacyHyVCsIzo53CoKznIfqN30Xjj_PiFOE1FVRJI5Cwtc0wMbKzfvww1iRV7J8vdFk-cgEflMWw30VbgIwAH4r9a6zGEvFezBfpP7l0iyRZAokYQMO0JU852LVus4GoPjwZg0YUfecbzgRDWE1t9DvQqYYb7oFed6CoJS-zHoj"
+                />
               </ThemeCard>
               <ThemeCard className="h-full">
-              <ProjectCard
-                icon="public"
-                label="Global Infrastructure"
-                title="Open Infrastructure for the Global South"
-                description="Scalable payments and identity systems designed specifically for emerging digital economies."
-                tags={["PostgreSQL", "Docker", "APIs"]}
-                image="https://lh3.googleusercontent.com/aida-public/AB6AXuD1EBSZh_yY-HSCyhu_wX_B9X8qikFEjuRD0b_EbbjZp4wkozXx3RPPltNC49KD6Q5-QCg1Fkk_obO435c_OQ1oEEXNM8TYC0Div3F_jk6jw0wK8JnHxNHOpNHkwkg7hErBgRbWPnPfc96laPMBfr8LCJ73p1xQHWM864qi7KzKtl_uxXPL8w7CY9b0TXgp0bUQcZY9Kye_Wff5X_Z7dD0wLWoECe4vKbVfzcPgnY_1q_p3JJj1fkcJH8CNuPt_aOXFgHdTB8iEqpTz"
-              />
+                <ProjectCard
+                  icon="public"
+                  label="Global Infrastructure"
+                  title="Open Infrastructure for the Global South"
+                  description="Scalable payments and identity systems designed specifically for emerging digital economies."
+                  tags={["PostgreSQL", "Docker", "APIs"]}
+                  image="https://lh3.googleusercontent.com/aida-public/AB6AXuD1EBSZh_yY-HSCyhu_wX_B9X8qikFEjuRD0b_EbbjZp4wkozXx3RPPltNC49KD6Q5-QCg1Fkk_obO435c_OQ1oEEXNM8TYC0Div3F_jk6jw0wK8JnHxNHOpNHkwkg7hErBgRbWPnPfc96laPMBfr8LCJ73p1xQHWM864qi7KzKtl_uxXPL8w7CY9b0TXgp0bUQcZY9Kye_Wff5X_Z7dD0wLWoECe4vKbVfzcPgnY_1q_p3JJj1fkcJH8CNuPt_aOXFgHdTB8iEqpTz"
+                />
               </ThemeCard>
               <ThemeCard className="h-full">
-              <ProjectCard
-                icon="conversion_path"
-                label="Dev Lifecycle"
-                title="From Issue to Impact"
-                description="End-to-end tooling to streamline the lifecycle from a GitHub issue report to a deployed feature."
-                tags={["TypeScript", "React", "Testing"]}
-                image="https://lh3.googleusercontent.com/aida-public/AB6AXuAjErb7W9uMLZW089a6ZeW_b_OSvqo9IvLOx9Oo-SgUhK8F6DweVw6ueWI_35ptJLsBYF6KticGygHkvrCaPR_ScRkDo4gHE3iXoCHwpmPonAw9E6Wu2sXRyKjvKdC3RFHBdgrzvq7kpmJtJSKVTTn3B1Ox_cVv0X_CMS4OG2uJVIlkkDUbn54Z_sBQB4Y_l_k1-TSmh0u5uSeCq4SlQdl6Ga_I0lUrQ683LcbeLW2WeJ6UTXLg6Q982nOYlyPlVJfGReQak04hMTXh"
-              />
+                <ProjectCard
+                  icon="conversion_path"
+                  label="Dev Lifecycle"
+                  title="From Issue to Impact"
+                  description="End-to-end tooling to streamline the lifecycle from a GitHub issue report to a deployed feature."
+                  tags={["TypeScript", "React", "Testing"]}
+                  image="https://lh3.googleusercontent.com/aida-public/AB6AXuAjErb7W9uMLZW089a6ZeW_b_OSvqo9IvLOx9Oo-SgUhK8F6DweVw6ueWI_35ptJLsBYF6KticGygHkvrCaPR_ScRkDo4gHE3iXoCHwpmPonAw9E6Wu2sXRyKjvKdC3RFHBdgrzvq7kpmJtJSKVTTn3B1Ox_cVv0X_CMS4OG2uJVIlkkDUbn54Z_sBQB4Y_l_k1-TSmh0u5uSeCq4SlQdl6Ga_I0lUrQ683LcbeLW2WeJ6UTXLg6Q982nOYlyPlVJfGReQak04hMTXh"
+                />
               </ThemeCard>
               <ThemeCard className="h-full">
-              <ProjectCard
-                icon="security"
-                label="Trust Engine"
-                title="Security Through Transparency"
-                description="Focusing on privacy-first protocols and public auditing tools using advanced cryptography."
-                tags={["Cryptography", "Java", "WebAssembly"]}
-                image="https://lh3.googleusercontent.com/aida-public/AB6AXuB4xD_gOlmkMCVkknokA8ks52dImxTqJSO9887myr8DLeKbOYr41Sb4FQNsbjFxW33dESouEtpIlJTId5HnkJC9-HGQd0PAxlsE4t_B9_1nWeMEvpKQ1BiYBuJuDry7ITCcj3U0I9uPDWa1yqKOb_zBZpLFcabFSNRn05Bk18viHXQWk0lLyGcVdlUOBFaVoVssOdr7E09i_bzt1qQ0IG0kaFjuFRnAzj-JPpe-qBGk2LnBr_avMgAu7PNAdaigUv3kOXl770M8uddY"
-              />
+                <ProjectCard
+                  icon="security"
+                  label="Trust Engine"
+                  title="Security Through Transparency"
+                  description="Focusing on privacy-first protocols and public auditing tools using advanced cryptography."
+                  tags={["Cryptography", "Java", "WebAssembly"]}
+                  image="https://lh3.googleusercontent.com/aida-public/AB6AXuB4xD_gOlmkMCVkknokA8ks52dImxTqJSO9887myr8DLeKbOYr41Sb4FQNsbjFxW33dESouEtpIlJTId5HnkJC9-HGQd0PAxlsE4t_B9_1nWeMEvpKQ1BiYBuJuDry7ITCcj3U0I9uPDWa1yqKOb_zBZpLFcabFSNRn05Bk18viHXQWk0lLyGcVdlUOBFaVoVssOdr7E09i_bzt1qQ0IG0kaFjuFRnAzj-JPpe-qBGk2LnBr_avMgAu7PNAdaigUv3kOXl770M8uddY"
+                />
               </ThemeCard>
             </div>
 
@@ -170,7 +232,7 @@ const MainPage = () => {
             <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="flex items-center gap-2">
                 <img src={salamanderLogo} alt="Salamander Tech Hub logo" className="h-8 w-auto object-contain" />
-                <p className="text-xs text-gray-600">© 2026 Salamander Tech Hub. All rights reserved.</p>
+                <p className="text-xs text-gray-600"> 2026 Salamander Tech Hub. All rights reserved.</p>
               </div>
               <p className="text-xs text-gray-600">Built with transparency and intent.</p>
             </div>
@@ -231,7 +293,7 @@ const SocialIcon: React.FC<SocialIconProps> = ({ iconType }) => {
     case 'twitter':
       return (
         <svg height="30px" width="30px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" className="social-icon twitter">
-          <path d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429" fill="currentColor"></path>
+          <path d="M42,12c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429" fill="currentColor"></path>
         </svg>
       );
     case 'github':
@@ -265,7 +327,7 @@ const socialStyles = {
     alignItems: 'center',
     justifyContent: 'center',
   } as React.CSSProperties,
-  
+
   css: `
     .social-cards-container {
       position: relative;
@@ -422,66 +484,6 @@ const socialStyles = {
       line-height: 1.5;
     }
   `,
-};
-
-// ProjectCard Component
-interface ProjectCardProps {
-  icon?: string;
-  label: string;
-  title: string;
-  description: string;
-  tags: string[];
-  image: string;
-}
-
-const ProjectCard: React.FC<ProjectCardProps> = ({ label, title, description, tags, image }) => {
-  return (
-    <article
-      className="rounded-md overflow-hidden flex flex-col h-full group"
-      style={{
-        transition: "all 0.3s ease",
-        border: "1px solid rgba(244, 208, 63, 0.2)",
-        boxShadow: "0 0 15px rgba(252, 211, 77, 0.1)",
-        backgroundColor: "rgba(17, 17, 17, 0.8)"
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = "#F4D03F";
-        e.currentTarget.style.boxShadow = "0 0 30px rgba(244, 208, 63, 0.3)";
-        e.currentTarget.style.transform = "translateY(-5px)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.borderColor = "rgba(244, 208, 63, 0.2)";
-        e.currentTarget.style.boxShadow = "0 0 15px rgba(252, 211, 77, 0.1)";
-        e.currentTarget.style.transform = "translateY(0)";
-      }}
-    >
-      <div className="h-48 overflow-hidden relative bg-gray-900 border-b border-white/5">
-        <img alt={title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={image} />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-        <div className="absolute bottom-4 left-4 flex items-center gap-2">
-          <span className="text-yellow-300 text-sm">★</span>
-          <span className="text-[10px] font-bold uppercase tracking-widest text-white/70">{label}</span>
-        </div>
-      </div>
-      <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors">{title}</h3>
-        <p className="text-sm text-gray-400 mb-6 flex-grow">{description}</p>
-        <div className="flex flex-wrap gap-2 mt-auto">
-          {tags.map((tag, idx) => (
-            <span
-              key={idx}
-              className={`text-[10px] font-mono px-2 py-1 rounded ${idx === 0
-                ? "border border-yellow-300/30 text-yellow-300 bg-yellow-300/5"
-                : "border border-white/10 text-gray-400"
-                }`}
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      </div>
-    </article>
-  );
 };
 
 export default MainPage;

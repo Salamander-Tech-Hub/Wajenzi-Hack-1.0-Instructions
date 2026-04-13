@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-const Bg = "/contact-component.png";
 import NavBar from '../components/Navbar';
 import ThemeButton from '../components/ThemeButton';
+
+const Bg = "/contact-component.png";
 
 interface ContactForm {
   firstName: string;
@@ -37,7 +38,7 @@ const ContactSection: React.FC = () => {
   return (
     <section className="min-h-screen bg-black text-white py-16 px-4">
       <NavBar />
-      <div className="container mx-auto max-w-6xl mt-26">
+      <div className="container mx-auto max-w-6xl mt-24">
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: '#FFED00' }}>
@@ -149,7 +150,7 @@ const ContactSection: React.FC = () => {
             <div className="text-center h-full flex flex-col justify-center mx-auto">
               <h3 className="text-2xl font-bold mb-8 text-gray-900">Follow us on</h3>
               <div className='items-center justify-center mx-auto'>
-                <img src={Bg} alt="Social Media" className='h-70' />
+                <img src={Bg} alt="Social Media" className='h-72' />
               </div>
 
 
