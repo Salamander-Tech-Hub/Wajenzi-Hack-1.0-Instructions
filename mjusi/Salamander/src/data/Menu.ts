@@ -7,11 +7,6 @@ const Menu = [
     name: "About",
     path: "/about"
   },
-  
-  {
-    name: "Blog",
-    path: "/blogs"
-  },
   {
     name: 'Contact',
     path: '/contact'

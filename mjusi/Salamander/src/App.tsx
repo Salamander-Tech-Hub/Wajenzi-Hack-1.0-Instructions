@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import MainPage from "./pages/home";
 import Contact from "./pages/Contact";
 import AboutPage from "./pages/About";
-import BlogPage from "./pages/Blog";
 import LoadingScreen from "./pages/LoadingScreen";
 import ChatWidget from "./components/ChatWidget";
 import RouteLoader from "./components/RouteLoader";
@@ -33,7 +32,6 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/blogs" element={<BlogPage />} />
         </Routes>
         <ChatWidget />
       </Router>

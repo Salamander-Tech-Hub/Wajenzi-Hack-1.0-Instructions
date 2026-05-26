@@ -42,13 +42,6 @@ export const knowledgeBase: KnowledgeEntry[] = [
     link: { label: 'View our GitHub', url: 'https://github.com/Salamander-Tech-Hub' },
   },
   {
-    id: 'blog',
-    keywords: ['blog', 'articles', 'insights', 'posts', 'read', 'engineering', 'culture', 'design'],
-    title: 'Blog & Insights',
-    content: "We publish technical deep-dives, engineering updates, and culture posts on our Blog. Topics include infrastructure, Rust, remote teams, and design. Head to the Blog page for the latest insights.",
-    link: { label: 'Read our Blog', url: '/blogs' },
-  },
-  {
     id: 'consultation',
     keywords: ['consultation', 'book', 'hire', 'collaborate', 'partnership', 'work with', 'engagement'],
     title: 'Consultations',
@@ -79,7 +72,7 @@ export const knowledgeBase: KnowledgeEntry[] = [
     id: 'greeting',
     keywords: ['hi', 'hello', 'hey', 'good morning', 'good evening', 'howdy'],
     title: 'Greeting',
-    content: "Hi! I'm the Salamander assistant. Ask me about our company, mission, projects, blog, or how to get in touch. Try: \"What is Salamander?\" or \"How can I contact you?\"",
+    content: "Hi! I'm the Salamander assistant. Ask me about our company, mission, projects, or how to get in touch. Try: \"What is Salamander?\" or \"How can I contact you?\"",
   },
   {
     id: 'thanks',
@@ -91,7 +84,7 @@ export const knowledgeBase: KnowledgeEntry[] = [
     id: 'fallback',
     keywords: [],
     title: 'Not sure',
-    content: "I couldn't find a precise answer for that. Try asking about Salamander, our mission, projects, blog, or how to contact us. You can also visit the About or Contact page for more.",
+    content: "I couldn't find a precise answer for that. Try asking about Salamander, our mission, projects, or how to contact us. You can also visit the About or Contact page for more.",
     link: { label: 'Contact us', url: '/contact' },
   },
 ];

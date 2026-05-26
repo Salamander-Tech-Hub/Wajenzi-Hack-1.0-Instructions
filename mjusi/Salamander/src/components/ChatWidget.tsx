@@ -13,7 +13,7 @@ interface Message {
 const WELCOME_MESSAGE: Message = {
   id: 'welcome',
   role: 'assistant',
-  content: "Hi! I'm the Salamander assistant. Ask me about our company, mission, projects, blog, or how to get in touch.",
+  content: "Hi! I'm the Salamander assistant. Ask me about our company, mission, projects, or how to get in touch.",
   timestamp: new Date(),
 };
 

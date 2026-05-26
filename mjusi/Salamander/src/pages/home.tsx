@@ -166,7 +166,7 @@ const MainPage = () => {
                   label="Global Infrastructure"
                   title="Open Infrastructure for the Global South"
                   description="Scalable payments and identity systems designed specifically for emerging digital economies."
-                  tags={["PostgreSQL", "Docker", "APIs"]}
+                  tags={["PostgreSQL", "Flutter", "APIs"]}
                   image="https://lh3.googleusercontent.com/aida-public/AB6AXuD1EBSZh_yY-HSCyhu_wX_B9X8qikFEjuRD0b_EbbjZp4wkozXx3RPPltNC49KD6Q5-QCg1Fkk_obO435c_OQ1oEEXNM8TYC0Div3F_jk6jw0wK8JnHxNHOpNHkwkg7hErBgRbWPnPfc96laPMBfr8LCJ73p1xQHWM864qi7KzKtl_uxXPL8w7CY9b0TXgp0bUQcZY9Kye_Wff5X_Z7dD0wLWoECe4vKbVfzcPgnY_1q_p3JJj1fkcJH8CNuPt_aOXFgHdTB8iEqpTz"
                 />
               </ThemeCard>
@@ -184,9 +184,9 @@ const MainPage = () => {
                 <ProjectCard
                   icon="security"
                   label="Trust Engine"
-                  title="Security Through Transparency"
-                  description="Focusing on privacy-first protocols and public auditing tools using advanced cryptography."
-                  tags={["Cryptography", "Java", "WebAssembly"]}
+                  title="Cross-Project Dependency Patch"
+                  description=" Maintainers from different projects come together to spot common problems in shared tools or libraries."
+                  tags={["Transparency", "Cross-repo repair", "Collaborative maintenance"]}
                   image="https://lh3.googleusercontent.com/aida-public/AB6AXuB4xD_gOlmkMCVkknokA8ks52dImxTqJSO9887myr8DLeKbOYr41Sb4FQNsbjFxW33dESouEtpIlJTId5HnkJC9-HGQd0PAxlsE4t_B9_1nWeMEvpKQ1BiYBuJuDry7ITCcj3U0I9uPDWa1yqKOb_zBZpLFcabFSNRn05Bk18viHXQWk0lLyGcVdlUOBFaVoVssOdr7E09i_bzt1qQ0IG0kaFjuFRnAzj-JPpe-qBGk2LnBr_avMgAu7PNAdaigUv3kOXl770M8uddY"
                 />
               </ThemeCard>

@@ -14,6 +14,10 @@ import steveKingoroImg from '../assets/team/steve-kingoro.svg';
 import christianTazmaImg from '../assets/team/christian-tazma.svg';
 import charlesMbuguaImg from '../assets/team/charles.jpeg';
 import jeniferMbalaImg from '../assets/team/jenifer_mbala.jpeg';
+import heroVideo from '../assets/Untitled design.mp4';
+import leadersTeamImg from '../assets/leaders-team.jpeg';
+import champsImg from '../assets/champs.jpeg';
+import communityImg from '../assets/community.jpeg';
 
 interface TeamMember {
   name: string;
@@ -76,8 +80,16 @@ const AboutPage: React.FC = () => {
               <span className="text-primary font-bold">open source software</span>.
             </p>
             {/* Hero media placeholder – full-width banner / hero video */}
-            <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden">
-              <MediaPlaceholder type="video" aspectRatio="wide" label="Hero video or banner image" className="w-full" />
+            <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-slate-800/80">
+              <video
+                src={heroVideo}
+                className="w-full aspect-[21/9] object-cover"
+                controls
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
             </div>
           </div>
         </section>
@@ -110,7 +122,11 @@ const AboutPage: React.FC = () => {
                 </div>
               </div>
               <ThemeCard className="overflow-hidden">
-                <MediaPlaceholder type="image" aspectRatio="portrait" label="Mission / team photo or video" className="w-full" />
+                <img
+                  src={leadersTeamImg}
+                  alt="Salamander Leadership Team"
+                  className="w-full h-auto object-cover"
+                />
               </ThemeCard>
             </div>
           </div>
@@ -149,14 +165,22 @@ const AboutPage: React.FC = () => {
                   Salamander started with a simple belief: that everyone can contribute to open source. We built a space where engineers, designers, and makers learn together and ship in the open.
                 </p>
               </div>
-              <ThemeCard>
-                <MediaPlaceholder type="image" aspectRatio="video" label="Story image or short video" className="w-full" />
+              <ThemeCard className="overflow-hidden">
+                <img
+                  src={champsImg}
+                  alt="Salamander Champions"
+                  className="w-full aspect-video object-cover"
+                />
               </ThemeCard>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <ThemeCard className="order-2 lg:order-1">
-                <MediaPlaceholder type="image" aspectRatio="video" label="Office / culture / event photo" className="w-full" />
+              <ThemeCard className="order-2 lg:order-1 overflow-hidden">
+                <img
+                  src={communityImg}
+                  alt="Salamander Community and Culture"
+                  className="w-full aspect-video object-cover"
+                />
               </ThemeCard>
               <div className="order-1 lg:order-2">
                 <h3 className="text-2xl font-bold text-white mb-4">Build. Burn. Evolve.</h3>
